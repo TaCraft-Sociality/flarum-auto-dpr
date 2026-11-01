@@ -1,0 +1,60 @@
+tacraft-sociality-auto-dpr:
+  admin:
+    status_heading: 运行状态
+    status_enabled: 已启用
+    status_disabled: 已关闭
+    stat_status: 当前状态
+    stat_interval_hint: 每
+    stat_run_suffix: 清理一次
+    stat_pending_discussions: 待删除讨论
+    stat_pending_unit_discussion: 条主题（含其全部回复）
+    stat_pending_posts: 待删除回复
+    stat_pending_unit_post: 条独立回复
+    stat_last_run: 上次运行
+    stat_last_source: "触发方式："
+    stat_last_result: 上次删除
+    stat_last_result_value: 讨论
+    stat_last_result_post: 回复
+    stat_last_result_hint: 距上次运行
+    stat_next_run: 下次运行
+    stat_due_now: 已到执行时间，等待下一个请求或计划任务
+    never: 从未运行
+    disabled_note: 自动清理已关闭，不会删除任何内容。
+    status_load_failed: "无法读取运行状态："
+    columns_missing: 当前数据库缺少 hidden_at / hidden_user_id 字段，无法执行自动清理，请确认站点已运行 Flarum 2.0 或更高版本。
+    scheduler_note: "提示：建议在服务器上添加计划任务，每分钟执行一次 php flarum schedule:run。未配置计划任务时，请保持“访问时自动检查”开启，系统会在有人访问论坛时按间隔自动清理。"
+    source_request: 访问触发
+    source_scheduler: 计划任务
+    source_cli: 控制台命令
+    source_manual: 后台手动
+
+    schedule_heading: 定时设置
+    schedule_intro: 自动永久删除被用户删除（隐藏）的讨论和回复，删除后无法恢复。
+    enabled_switch: 启用自动清理
+    enabled_help: 开启后，系统会按下面的间隔自动永久删除被用户删除的讨论和回复；关闭后不会删除任何内容。
+    interval_label: 清理间隔
+    interval_help: 每隔多久执行一次自动清理。例如设置为 1 小时，则每小时检查并删除一次。
+    retention_label: 保留时长
+    retention_help: 内容被用户删除后，需要等待多久才会被永久删除。设为 0 表示下一次清理时立即删除。
+    summary_interval: "当前设置：每 {interval}清理一次"
+    summary_retention: "，内容被删除后 {retention}永久删除。"
+    summary_retention_zero: "，内容被删除后将在下一次清理时永久删除。"
+
+    scope_heading: 删除范围
+    delete_discussions_switch: 删除被用户删除的讨论
+    delete_discussions_help: 永久删除整个主题及其全部回复。
+    delete_posts_switch: 删除被用户删除的回复
+    delete_posts_help: 永久删除单独的回复。若回复所在主题也已被删除，会随主题一起删除。
+    only_author_hidden_switch: 仅处理用户自己删除的内容
+    only_author_hidden_help: 开启后只处理作者本人删除的内容；由管理员或审核隐藏、屏蔽的内容不会被永久删除。
+
+    advanced_heading: 高级选项
+    batch_size_label: 单次最多处理数量
+    batch_size_help: 每次运行最多永久删除多少条内容，避免一次删除过多影响数据库性能。取值范围 1 ~ 1000。
+    run_on_request_switch: 访问时自动检查
+    run_on_request_help: 若站点未配置系统计划任务，请开启此项：当有用户访问论坛时自动检查是否到达间隔，到达则执行一次清理。
+
+    run_now_button: 立即执行一次
+    run_now_help: 立即执行会忽略启用开关与清理间隔，马上执行一次清理，请谨慎操作。
+    run_done: "已执行：永久删除讨论 {discussions} 条、回复 {posts} 条。"
+    run_failed: 执行失败，请查看站点日志后重试。

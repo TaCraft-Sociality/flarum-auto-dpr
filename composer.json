@@ -1,0 +1,40 @@
+{
+    "name": "tacraft-sociality/flarum-auto-dpr",
+    "description": "Automatically and permanently delete user-deleted (hidden) discussions and posts after a configurable interval.",
+    "keywords": [
+        "flarum",
+        "moderation",
+        "recycle-bin",
+        "auto-delete",
+        "privacy"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tacraft Sociality"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/tacraft-sociality/flarum-auto-dpr/issues"
+    },
+    "require": {
+        "flarum/core": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TacraftSociality\\AutoDpr\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Auto-DPR",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-broom",
+                "backgroundColor": "#fdecea",
+                "color": "#c5221f"
+            }
+        }
+    }
+}
